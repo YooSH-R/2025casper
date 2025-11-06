@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  color: #333;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+.h_on {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.h_txt_color {
+  color: #333 !important;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 100;
+  transition: 0.3s;
+}
+header > h1 {
+  padding: 24px 0 0 2%;
+}
+header > .nav_icon {
+  width: 40px;
+  position: absolute;
+  top: 24px;
+}
+header > .nav_icon > span.fas {
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+header > .nav_icon > span:last-child {
+  display: none;
+}
+header > .icon1 {
+  right: 3.5%;
+}
+header > .icon2 {
+  right: 1%;
+}
+
+header nav {
+  width: 600px;
+  margin: -24px auto;
+}
+
+header nav .gnb {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav .gnb a {
+  color: #fff;
+  font-size: 16px;
+}
+
+header nav .gnb a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #1C1A1D;
+  height: 177px;
+}/*# sourceMappingURL=layout.css.map */

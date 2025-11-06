@@ -1,0 +1,47 @@
+
+// 컬러 변수
+$txt_color1:#333;
+$txt_color2:#fff;
+$txt_color3:#225499;
+$txt_color4:#3B8BAE;
+$txt_color5:#052B58;
+
+$bg_color_g:#1C1A1D;
+$bg_color_y:#ff0;
+
+$nav_color01:#00B3FF;
+$nav_color01:#006EFF;
+
+$line_color_g:#ccc;
+
+// 글자크기 변수
+$t_size_s:12px;
+$t_size_m:16px;
+
+$t_size_t1:22px;
+$t_size_t2:20px;
+
+// 기본 글꼴
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body{
+  font-family: "Noto Sans KR", sans-serif;
+  font-size:$t_size_s;
+  color:$txt_color1;
+  background:$txt_color2;
+  overflow-x:hidden;
+}
+
+a{color:$txt_color1; text-decoration:none;}
+
+ul, ol, li{list-style:none;}
+
+address{font-style:normal;}
+
+// 화면스크롤시 헤더 추가 서식
+.h_on{background:rgba(255,255,255,0.9) !important;}
+
+// 화면 스크롤시 헤더 내비게이션 추가서식
+.h_txt_color{color:$txt_color1 !important;}
+
+// 폼양식에 들어가는 버튼서식, input서식
