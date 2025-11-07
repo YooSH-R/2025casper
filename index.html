@@ -24,6 +24,19 @@
 
   <!-- 제이쿼리 쿠키 -->
   <script src="./script/jquery.cookie.js"></script>
+
+  <!-- 스크롤 이벤트 스크립트 -->
+  <script src="./script/jquery.arctic_scroll.js"></script>
+  
+  <!-- 
+    arctic_scroll 스크립트
+    1. 메뉴 a태그에 href=#id명 class="arctic_scroll"설정
+    2. 페이지 하단에 script일 연결
+    3. script안에 속도값 스크립트 작성함.
+    $(".arctic_scroll").arctic_scroll({
+      speed: 800
+    });
+  -->
 </head>
 <body>
   <!-- 상단헤더영역 시작 -->
@@ -37,11 +50,11 @@
     <!-- 메인메뉴 -->
     <nav>
       <ul class="gnb">
-        <li><a href="#intro" title="소개">소개</a></li>
-        <li><a href="#text_drive" title="체험">체험</a></li>
-        <li><a href="#event" title="이벤트">이벤트</a></li>
-        <li><a href="#buy_info" title="구매">구매</a></li>
-        <li><a href="#customer" title="고객지원">고객지원</a></li>
+        <li><a href="#intro" title="소개" class="arctic_scroll">소개</a></li>
+        <li><a href="#text_drive" title="체험" class="arctic_scroll">체험</a></li>
+        <li><a href="#event" title="이벤트" class="arctic_scroll">이벤트</a></li>
+        <li><a href="#buy" title="구매" class="arctic_scroll">구매</a></li>
+        <li><a href="#customer" title="고객지원" class="arctic_scroll">고객지원</a></li>
       </ul>
     </nav>
 
@@ -52,18 +65,18 @@
     <div class="nav_icon icon2">
       <span class="fas fa-bell"></span><span>알림</span>
     </div>
-
-    <!-- 오른쪽 고정 내비게이션 -->
-    <nav id="m_nav">
-      <ul>
-        <li><span class="num">1</span><a href="#intro" title="소개">소개</a></li>
-        <li><span class="num">2</span><a href="#text_drive" title="체험">체험</a></li>
-        <li><span class="num">3</span><a href="#event" title="이벤트">이벤트</a></li>
-        <li><span class="num">4</span><a href="#buy_info" title="구매">구매</a></li>
-        <li><span class="num">5</span><a href="#customer" title="고객지원">고객지원</a></li>
-      </ul>
-    </nav>
   </header>
+
+  <!-- 오른쪽 고정 내비게이션 -->
+  <nav id="m_nav">
+    <ul>
+      <li><span class="num">1</span><a href="#intro" title="소개" class="arctic_scroll">소개</a></li>
+      <li><span class="num">2</span><a href="#text_drive" title="체험" class="arctic_scroll">체험</a></li>
+      <li><span class="num">3</span><a href="#event" title="이벤트" class="arctic_scroll">이벤트</a></li>
+      <li><span class="num">4</span><a href="#buy" title="구매" class="arctic_scroll">구매</a></li>
+      <li><span class="num">5</span><a href="#customer" title="고객지원" class="arctic_scroll">고객지원</a></li>
+    </ul>
+  </nav>
 
   <!-- 메인콘텐츠 영역 시작 -->
   <main>
@@ -93,6 +106,7 @@
     <section id="customer"></section>
   </main>
 
+
   <!-- 푸터영역 시작 -->
   <footer>
     <div class="f_inner">
@@ -116,6 +130,8 @@
           <dt>사업자등록번호 : </dt><dd>000-00-00000</dd>
           <dt>통신판매업신고번호 : </dt><dd>000-00-0000</dd>
           <dt>대표이사 : </dt><dd>000</dd>
+          <dt>캐스퍼 고객센터 : </dt><dd>080-000-0000</dd>
+          
           <dt>주소 : </dt><dd>서울시 서초구 헌릉로 00</dd>
           <dt>호스팅서비스 제공 : </dt><dd>00000</dd>
         </dl>
@@ -123,12 +139,21 @@
       </address>
     </div>
   </footer>
+
   <script>
     $(document).ready(function(){
       // 1. 변수선언
       let h1 = $('header h1 img');
       let gnb = $('.gnb a');
       let h_icon = $('header span.fas');
+      let m_nav = $('#m_nav > ul li');
+
+      // m_nav에 마우스 오버시 가로길이 늘리기
+      m_nav.hover(function(){
+          $(this).addClass('m_nav_on');
+        },function(){
+          $(this).removeClass('m_nav_on');
+        });
 
       // 2. 사용자가 헤더영역에 마우스 오버시
       $('header').mouseenter(function(){
@@ -160,6 +185,56 @@
         h1.attr('src','./images/logo-casper-white.png')
       });
 
+      // 스크롤 이벤트
+      $(function(){
+        $(".arctic_scroll").arctic_scroll({
+            speed: 800
+        });
+      });
+
+      // 모달변수
+      const modal = `
+        <div class="modal">
+          <div class="m_inner">
+            <a href="#" title="">
+              <img src="./images/pc_prod_notice_20211210.jpg" alt="생산 계획 조정 안내">
+            </a>
+            <div class="btn_area">
+              <input type="checkbox" id="ch">
+              <label for="ch">오늘 하루 창 열지 않기</label>
+              <input type="button" value="닫기" id="cls_btn">
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // 모달 나오게 하기
+      $('body').append(modal)
+      
+      // 쿠키파일 존재한다면 모달 나오지 않게 하기
+      // if($.cookie('popup')=='none'){
+      //   $('.modal').hide();
+      // }
+
+      // 닫기버튼 클릭하면 모달 끄기
+      $('#ch, #cls_btn').click(function(){
+        closePopup();
+      });
+
+      // 모달 끄기 함수
+      function closePopup(){
+        // 오늘하루 열지않음에 체크하면
+        if($('#ch').is(':checked')){
+          // 쿠키 생성
+          $.cookie('popup', 'none', {expires:1, path:'/'});
+          // 모달 닫기
+          $('.modal').fadeOut();
+        }else{
+          // 오늘하루 열지않음에 체크하지 않으면
+          // 모달 닫기
+          $('.modal').fadeOut();
+        }
+      };
     });
   </script>
 </body>

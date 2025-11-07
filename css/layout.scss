@@ -1,13 +1,17 @@
-@import "./common";
+@import "common";
+
+// body, html{scroll-behavior:smooth;}
 
 // layout.scss 레이아웃
-// header
-$ani_time:0.3s;
+
+
+
+/* ================ header ================ */
 
 header{
   position:fixed; top:0; left:0;
   width:100%; height:70px;
-  z-index:100;
+  z-index:1000;
   transition:$ani_time;
   > h1{padding:24px 0 0 2%;}
   
@@ -42,13 +46,130 @@ header nav .gnb a{
   font-size:$t_size_m;
 }
 
-header nav .gnb a:hover{
-  text-decoration:underline;
+header nav .gnb a:hover{text-decoration:underline;}
 
+// 오른쪽 고정 내비게이션
+#m_nav{
+  position:fixed;
+  right:30px; top:50%;
+  transform:translateY(-50%);
+  z-index:1000;
+  width:200px; height:160px;
+  
+  > ul{
+    position:relative;
+
+    > li{
+      width:30px; height:30px;
+      border-radius:40px;
+      position:absolute;
+      right:0;
+      transition:0.5s;
+      line-height:30px;
+      overflow:hidden;
+
+      &:nth-child(2){top:40px;}
+      &:nth-child(3){top:80px;}
+      &:nth-child(4){top:120px;}
+      &:last-child{top:160px;}
+      
+      // 마우스 오버시 span에 $nav_color01적용
+      &:hover span{background:$nav_color01;}
+    }
+
+    span{
+      display:inline-block;
+      width:30px; height:30px;
+      border-radius:50%;
+      background:rgb(0, 179, 255, .6);
+      color:$txt_color2;
+      text-align:center;
+      font-weight:bold;
+      transition:$ani_time;
+
+    }
+
+    a{
+      color:$txt_color2;
+      display:inline-block;
+      width:160px;
+      text-align:center;
+      position:absolute; top:0;
+    }
+  }
+  // 내비게이션에 마우스 오버시 li태그에 적용할 배경서식
+  .m_nav_on{
+    width:200px !important;
+    background:rgba(0,0,0,.8) !important;
+  }
 }
 
-// footer
+/* ================ footer ================ */
 footer{
   background:$bg_color_g;
-  height:177px;
+  padding:40px 0;
+
+  > .f_inner{
+    width:1200px;
+    margin:$box_center;
+    display: flex;
+    flex-wrap:wrap;
+    align-content:flex-end;
+  }
+
+  h2{
+    padding-top:10px;
+    width:150px;
+  }
+
+  .f_lnb > ul{
+    display:flex;
+    padding-top:15px;
+
+    a{
+      color:$line_color_g;
+      padding:0 20px;
+      border-right:1px solid $line_color_g;
+      &:hover{text-decoration:underline;}
+    }
+
+    li:last-child a{border-right:none;}
+
+    li:nth-child(2) a{color:$txt_color2;}
+  }
+
+  address{
+    line-height:26px;
+    text-transform:uppercase;
+    color:$line_color_g;
+    padding-left:170px;
+    dt, dd{
+      display:inline-block;
+    }
+  }
+}
+
+// 모달
+.modal{
+  position:fixed; left:0; top:0;
+  z-index:1000;
+  width:100%; height:100%;
+  background:#000000a8;
+}
+
+.modal > .m_inner{
+  position:absolute; left:50%; top:50%;
+  transform:translate(-50%, -50%);
+}
+
+.modal .btn_area{
+  background:#fff;
+  padding:8px;
+}
+
+.modal .btn_area #cls_btn{
+  margin-left:255px;
+  border:none;
+  background:#fff;
+  cursor:pointer;
 }
