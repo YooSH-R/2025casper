@@ -212,9 +212,9 @@
       $('body').append(modal)
       
       // 쿠키파일 존재한다면 모달 나오지 않게 하기
-      // if($.cookie('popup')=='none'){
-      //   $('.modal').hide();
-      // }
+      if($.cookie('popup')=='none'){
+        $('.modal').hide();
+      }
 
       // 닫기버튼 클릭하면 모달 끄기
       $('#ch, #cls_btn').click(function(){
