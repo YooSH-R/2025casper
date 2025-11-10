@@ -1,5 +1,8 @@
 
-@import "common";
+@use "common" as *;
+
+// 마진값 설정
+$m_value:80px;
 
 main{
   overflow:hidden;
@@ -7,7 +10,57 @@ main{
   > #movie{
     height:100vh;
     background:$line_color_g;
+    overflow:hidden;
     > video{width:100%;}
+    > .m_info{
+      position:absolute;
+      width:100%;
+      top:46%;
+      text-align:center;
+      z-index:100%;
+      color:$txt_color2;
+      
+      > h2{
+        font-size:60px;
+        text-transform:uppercase;
+        font-weight:bold;
+      }
+
+      > p{
+        line-height:80px;
+        font-size:$t_size_m;
+      }
+
+      > a{
+        color:$txt_color2;
+        font-size:14px;
+        text-decoration:underline;
+        margin:0 20px;
+        padding:5px 10px;
+      }
+
+      // 첫번째 메뉴 서식 배경색 적용
+      > a:first-of-type{
+        background:$nav_color02;
+      }
+    }
+
+    // 다음페이지 이동하기 버튼 서식
+    @mixin arrow_btn{
+      border-left:1px solid $txt_color2;
+      border-bottom:1px solid $txt_color2;
+      transform:rotate(-45deg);
+      width:40px; height:40px;
+    }
+    > #next_btn{
+      // 글자 숨기기 (text-indent:블럭요소에만 적용됨)
+      display:inline-block;
+      text-indent:-9999px;
+      position:absolute;
+      bottom:40px; left:50%;
+      transform:translate(-50%, -50%);
+      @include arrow_btn;
+    }
   }
   > #top3{height:1146px; background:cornsilk;}
   > #intro{height:923px; background:#e9cc58;}
@@ -15,5 +68,129 @@ main{
   > #event{height:923px; background:#635414;}
   > #buy{height:923px; background:#c59e04;}
   > #customer{height:923px; background:#a1976e;}
+}
 
+// 콘텐츠 제목서식
+@mixin m_title(){
+  font-size:$t_size_t3;
+  text-align:center;
+  font-weight:bold;
+  padding:$m_value 0 10px 0;
+}
+
+// 버튼 서식
+@mixin btn(){
+  border:1px solid $txt_color1;
+  background:$txt_color2;
+  padding:8px 26px;
+}
+.btn{
+  @include btn;
+}
+
+// top3, intro, test_drive, event, buy
+.m_title{
+  margin-top:$m_value;
+  @include m_title;
+}
+
+// 가장 많이 찾는 캐스퍼 top3
+#top3{
+  text-align:center;
+  > .p01{
+    font-size:$t_size_m;
+    line-height:50px;
+  }
+
+  // slide 서식
+  .top3{
+    position:relative;
+    margin-top:50px;
+    padding:20px 0 50px 0;
+    
+    > .swiper-wrapper{
+      width:100%; height:100%;
+    
+      .rank{
+        color:#327186;
+        border:1px solid #327186;
+        padding:6px 30px;
+        border-radius:20px;
+        font-size:$t_size_ss;
+      }
+      .top3_title{
+        font-size:$t_size_t1;
+        font-weight:500;
+        padding-top:30px;
+        color:$txt_color5;
+      }
+
+      // 자동차 사진
+      img{
+        width:400px;
+        padding:$m_value 0;
+        // 시간속성을 넣어줌 (역동적인 느낌)
+        transition:0.8s;
+        transition-timing-function:cubic-bezier(0,1,1.0);
+        transform:scale(0.7);
+      }
+
+      // 이미지 멈출 때 크기 확장하기
+      .swiper-slide-active img{
+        transform:scale(1.2);
+      }
+
+      // 디테일 - 색상정보, 가격정보, 옵션 서식
+      .detail{
+        display:flex;
+        justify-content:center;
+        padding-bottom:60px;
+        
+        > li{
+          width:190px;
+          padding:0 20px;
+          text-align:left;
+          line-height:20px;
+          font-size:$t_size_m;
+          border-right:1px solid $line_color_g;
+          &:last-child{
+            border:none;
+            padding-top:6px;
+          }
+        }
+
+        .price{
+          font-size:$t_size_t1;
+          font-weight:bold;
+          color:$txt_color5
+        }
+
+        // 색상박스
+        .outer_color, .inner_color{
+          display:inline-block;
+          width:56px; height:40px;
+          text-indent:-9999px;
+          float:left;
+          margin-right:10px;
+        }
+        .kaki{background:#494b3e;}
+        .black{background:#000;}
+        .white{background:#fff; border:1px solid #ccc;}
+        .orange{background:rgb(196,86,0);}
+      }
+    }
+
+    // 스와이퍼 슬라이드 콘트롤 버튼 서식
+    .swiper-pagination-bullet{
+      width:100px !important;
+      height:10px !important;
+      background:$txt_color5;
+      border-radius:$txt_color5 !important;
+      border-radius:0 !important;
+      margin:0 5px !important;
+    }
+    .swiper-button-next::after, .swiper-button-prev::before{
+      color:$txt_color3 !important;
+    }
+  }
 }

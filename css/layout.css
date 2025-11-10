@@ -115,7 +115,7 @@ header nav .gnb a:hover {
   top: 160px;
 }
 #m_nav > ul > li:hover span {
-  background: #006EFF;
+  background: #00B3FF;
 }
 #m_nav > ul span {
   display: inline-block;
@@ -194,20 +194,17 @@ footer address dt, footer address dd {
   height: 100%;
   background: rgba(0, 0, 0, 0.6588235294);
 }
-
 .modal > .m_inner {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-.modal .btn_area {
+.modal .btn area {
   background: #fff;
   padding: 8px;
 }
-
-.modal .btn_area #cls_btn {
+.modal #cls_btn {
   margin-left: 255px;
   border: none;
   background: #fff;
