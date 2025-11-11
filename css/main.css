@@ -80,22 +80,6 @@ main > #movie > #next_btn {
   width: 40px;
   height: 40px;
 }
-main > #top3 {
-  height: 1146px;
-  background: cornsilk;
-}
-main > #intro {
-  height: 923px;
-  background: #e9cc58;
-}
-main > #text_drive {
-  height: 923px;
-  background: #9c862c;
-}
-main > #event {
-  height: 923px;
-  background: #635414;
-}
 main > #buy {
   height: 923px;
   background: #c59e04;
@@ -121,6 +105,7 @@ main > #customer {
 
 #top3 {
   text-align: center;
+  padding-bottom: 50px;
 }
 #top3 > .p01 {
   font-size: 16px;
@@ -185,7 +170,6 @@ main > #customer {
   width: 56px;
   height: 40px;
   text-indent: -9999px;
-  float: left;
   margin-right: 10px;
 }
 #top3 .top3 > .swiper-wrapper .detail .kaki {
@@ -209,6 +193,110 @@ main > #customer {
   border-radius: 0 !important;
   margin: 0 5px !important;
 }
-#top3 .top3 .swiper-button-next::after, #top3 .top3 .swiper-button-prev::before {
+#top3 .top3 .swiper-button-next, #top3 .top3 .swiper-button-prev {
   color: #225499 !important;
+}
+
+#intro {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+#intro > h2 {
+  position: absolute;
+  top: -50px;
+  width: 100%;
+  z-index: 100;
+}
+#intro .intro_title_left, #intro .intro_title_right {
+  position: absolute;
+  z-index: 100;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40px;
+}
+#intro .intro_title_left {
+  top: 250px;
+  left: -330px;
+}
+#intro .intro_title_right {
+  bottom: 200px;
+  right: -300px;
+  text-align: right;
+}
+#intro video {
+  width: 100%;
+}
+#intro .btn {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+#test_drive {
+  text-align: center;
+}
+#test_drive > .p01 {
+  font-size: 14px;
+}
+#test_drive > article {
+  width: 430px;
+  height: 280px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 50px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#test_drive > article > h3 {
+  font-size: 24px;
+  padding-top: 20px;
+  font-weight: bold;
+  line-height: 34px;
+}
+#test_drive > article > p {
+  padding: 30px 0;
+  line-height: 20px;
+}
+#test_drive > article .test_d_btn1 {
+  padding: 10px 60px;
+  color: #fff;
+  background: #225499;
+  line-height: 30px;
+}
+#test_drive > article .test_d_btn2 {
+  display: block;
+  position: relative;
+  top: 20px;
+  color: #00B3FF;
+  font-weight: 450;
+}
+#test_drive > article .test_d_p {
+  transform: translateY(50px);
+}
+#test_drive .test_drive_r .test_d_p {
+  transform: translateY(64px);
+}
+
+#event {
+  text-align: center;
+  background: #ccc;
+  padding-bottom: 50px;
+}
+#event > .p01 {
+  font-size: 14px;
+}
+#event .swiper {
+  overflow: visible;
+  padding: 30px 0;
+}
+#event .swiper-pagination-bullet {
+  transition: 0.5s;
+}
+#event .swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 10px;
 }/*# sourceMappingURL=main.css.map */

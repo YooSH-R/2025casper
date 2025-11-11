@@ -200,7 +200,7 @@ footer address dt, footer address dd {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.modal .btn area {
+.modal .btn_area {
   background: #fff;
   padding: 8px;
 }

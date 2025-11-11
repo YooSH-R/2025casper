@@ -62,10 +62,6 @@ main{
       @include arrow_btn;
     }
   }
-  > #top3{height:1146px; background:cornsilk;}
-  > #intro{height:923px; background:#e9cc58;}
-  > #text_drive{height:923px; background:#9c862c;}
-  > #event{height:923px; background:#635414;}
   > #buy{height:923px; background:#c59e04;}
   > #customer{height:923px; background:#a1976e;}
 }
@@ -84,9 +80,7 @@ main{
   background:$txt_color2;
   padding:8px 26px;
 }
-.btn{
-  @include btn;
-}
+.btn{@include btn;}
 
 // top3, intro, test_drive, event, buy
 .m_title{
@@ -97,6 +91,7 @@ main{
 // 가장 많이 찾는 캐스퍼 top3
 #top3{
   text-align:center;
+  padding-bottom:50px;
   > .p01{
     font-size:$t_size_m;
     line-height:50px;
@@ -170,7 +165,6 @@ main{
           display:inline-block;
           width:56px; height:40px;
           text-indent:-9999px;
-          float:left;
           margin-right:10px;
         }
         .kaki{background:#494b3e;}
@@ -189,8 +183,121 @@ main{
       border-radius:0 !important;
       margin:0 5px !important;
     }
-    .swiper-button-next::after, .swiper-button-prev::before{
+    .swiper-button-next, .swiper-button-prev{
       color:$txt_color3 !important;
     }
+  }
+}
+
+// 3. 소개페이지
+#intro{
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+  
+  > h2{
+    position:absolute; top:-50px;
+    width:100%; z-index:100;
+  }
+
+  .intro_title_left, .intro_title_right{
+  position:absolute;
+  z-index:100;
+  font-size:30px;
+  font-weight:500;
+  line-height:40px;
+  }
+
+  .intro_title_left{
+    top:250px;
+    // left:130px;
+    left:-330px;
+  }
+
+  .intro_title_right{
+    bottom:200px;
+    // right:150px;
+    right:-300px;
+    text-align:right;
+  }
+
+  video{width:100%;}
+
+  .btn{
+    position:absolute;
+    bottom:100px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
+  }
+}
+
+// 4. 시승신청(체험)
+@mixin btn1{
+  padding:10px 60px;
+  color:$txt_color2;
+  background:$txt_color3;
+  line-height:30px;
+}
+
+#test_drive{
+  text-align:center;
+  
+  > .p01{font-size:$t_size_ss;}
+
+  > article{
+    width:430px; height:280px;
+    border:1px solid $line_color_g;
+    padding:15px;
+    margin-top:50px;
+    display:inline-block;
+    vertical-align:middle; // display:block일 때 세로방향 가운데 정렬
+
+    > h3{
+      font-size:24px;
+      padding-top:20px;
+      font-weight:bold;
+      line-height:34px;
+    }
+
+    > p{
+      padding:30px 0;
+      line-height:20px;
+    }
+
+    .test_d_btn1{@include btn1;}
+    .test_d_btn2{
+      display:block;
+      position:relative;
+      top:20px;
+      color:$nav_color01;
+      font-weight:450;
+    }
+
+    .test_d_p{transform:translateY(50px);}
+  }
+  .test_drive_r .test_d_p{transform: translateY(64px);}
+}
+
+// 5. 이벤트 콘텐츠 서식
+#event{
+  text-align:center;
+  background:#ccc;
+  padding-bottom:50px;
+  > .p01{font-size:$t_size_ss;}
+
+  .swiper{
+    overflow:visible;
+    padding:30px 0;
+  }
+
+  .swiper-pagination-bullet{
+    transition:0.5s;
+  }
+
+  .swiper-pagination-bullet-active{
+    width:30px;
+    border-radius:10px;
   }
 }
