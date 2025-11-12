@@ -80,14 +80,6 @@ main > #movie > #next_btn {
   width: 40px;
   height: 40px;
 }
-main > #buy {
-  height: 923px;
-  background: #c59e04;
-}
-main > #customer {
-  height: 923px;
-  background: #a1976e;
-}
 
 .btn {
   border: 1px solid #333;
@@ -103,13 +95,14 @@ main > #customer {
   padding: 80px 0 10px 0;
 }
 
+.p01 {
+  font-size: 16px;
+  line-height: 50px;
+}
+
 #top3 {
   text-align: center;
   padding-bottom: 50px;
-}
-#top3 > .p01 {
-  font-size: 16px;
-  line-height: 50px;
 }
 #top3 .top3 {
   position: relative;
@@ -238,13 +231,14 @@ main > #customer {
 
 #test_drive {
   text-align: center;
+  padding-bottom: 100px;
 }
 #test_drive > .p01 {
   font-size: 14px;
 }
 #test_drive > article {
   width: 430px;
-  height: 280px;
+  height: 260px;
   border: 1px solid #ccc;
   padding: 15px;
   margin-top: 50px;
@@ -258,7 +252,7 @@ main > #customer {
   line-height: 34px;
 }
 #test_drive > article > p {
-  padding: 30px 0;
+  padding: 20px 0 30px 0;
   line-height: 20px;
 }
 #test_drive > article .test_d_btn1 {
@@ -284,7 +278,7 @@ main > #customer {
 #event {
   text-align: center;
   background: #ccc;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 #event > .p01 {
   font-size: 14px;
@@ -299,4 +293,164 @@ main > #customer {
 #event .swiper-pagination-bullet-active {
   width: 30px;
   border-radius: 10px;
+}
+
+#buy {
+  text-align: center;
+}
+#buy h3 {
+  font-size: 20px;
+  padding: 40px 0 20px 0;
+  font-weight: bold;
+}
+#buy .t_color {
+  color: #3B8BAE;
+}
+#buy .buy_info_list {
+  display: grid;
+  width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 33.3333%);
+}
+#buy .buy_info_list > li {
+  padding-top: 50px;
+}
+#buy .buy_info_list > li > h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+#buy .buy_info_list > li > img {
+  width: 80px;
+  padding: 15px 0;
+}
+#buy .buy_info_list > li > .p02 {
+  line-height: 20px;
+}
+#buy .buy_info_list > li:last-child {
+  grid-area: 3/1/4/4;
+}
+#buy .buy_info_list > li:last-child > iframe {
+  width: 80%;
+  height: 400px;
+}
+
+#customer {
+  background: #ededed;
+}
+#customer > article {
+  padding-bottom: 30px;
+  width: 1200px;
+  height: 300px;
+  margin: 50px auto;
+  background: #fff;
+}
+#customer > article > h3 {
+  font-size: 18px;
+  text-align: center;
+  padding: 60px 0 20px 0;
+  font-weight: bold;
+}
+#customer > article .ars_left {
+  border-right: 1px solid #ccc;
+}
+#customer > article .ars_left, #customer > article .ars_right {
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  float: left;
+  display: flex;
+  justify-content: space-around;
+}
+#customer > article .ars_left > p, #customer > article .ars_right > p {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  text-align: center;
+  align-items: center;
+}
+#customer > article .ars_left > p > a, #customer > article .ars_right > p > a {
+  color: #006EFF;
+}
+#customer > article .ars_left > dl, #customer > article .ars_right > dl {
+  line-height: 24px;
+}
+#customer > article .ars_left > dl > dt, #customer > article .ars_right > dl > dt {
+  font-weight: bold;
+}
+#customer > article strong {
+  font-weight: 500px;
+  font-size: 16px;
+}
+#customer > article .car_icon, #customer > article .member_icon {
+  background: url("../images/bg-support-ars.png");
+  display: inline-block;
+  height: 46px;
+  text-indent: -9999px;
+  margin-top: 30px;
+}
+#customer > article .car_icon {
+  width: 75px;
+}
+#customer > article .member_icon {
+  width: 60px;
+  background-position: -90px 0;
+  transform: translateY(-30px);
+}
+#customer .cs_etc {
+  clear: both;
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+}
+#customer .cs_etc > li {
+  height: 200px;
+  background: #fff;
+  padding: 30px;
+  position: relative;
+  margin-bottom: 50px;
+}
+#customer .cs_etc > li > h3 {
+  font-size: 18px;
+}
+#customer .cs_etc > li > p:first-of-type {
+  margin-top: 30px;
+  font-weight: bold;
+}
+#customer .cs_etc > li > p:nth-of-type(2) {
+  margin-top: 10px;
+}
+#customer .cs_etc > li a {
+  color: #006EFF;
+  display: inline-block;
+  margin-top: 10px;
+}
+#customer .cs_etc > li a:first-of-type {
+  margin-top: 30px;
+}
+#customer .cs_etc > li > div {
+  text-align: center;
+}
+#customer .cs_etc > li > div > a:last-child {
+  margin-left: 30px;
+}
+#customer .cs_etc > li > .btn01 {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #042653;
+  color: #fff;
+  padding: 10px 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%);
+}
+
+.clearfix {
+  clear: both;
+  content: "";
+  display: block;
 }/*# sourceMappingURL=main.css.map */

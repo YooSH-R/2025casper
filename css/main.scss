@@ -1,9 +1,6 @@
 
 @use "common" as *;
 
-// 마진값 설정
-$m_value:80px;
-
 main{
   overflow:hidden;
   clear:both; // header에서 혹시 float속성이 사용되었다면 해제한다.
@@ -62,8 +59,6 @@ main{
       @include arrow_btn;
     }
   }
-  > #buy{height:923px; background:#c59e04;}
-  > #customer{height:923px; background:#a1976e;}
 }
 
 // 콘텐츠 제목서식
@@ -88,14 +83,16 @@ main{
   @include m_title;
 }
 
+// p01
+.p01{
+    font-size:$t_size_m;
+    line-height:50px;
+  }
+
 // 가장 많이 찾는 캐스퍼 top3
 #top3{
   text-align:center;
   padding-bottom:50px;
-  > .p01{
-    font-size:$t_size_m;
-    line-height:50px;
-  }
 
   // slide 서식
   .top3{
@@ -243,11 +240,12 @@ main{
 
 #test_drive{
   text-align:center;
+  padding-bottom:100px;
   
   > .p01{font-size:$t_size_ss;}
 
   > article{
-    width:430px; height:280px;
+    width:430px; height:260px;
     border:1px solid $line_color_g;
     padding:15px;
     margin-top:50px;
@@ -262,7 +260,7 @@ main{
     }
 
     > p{
-      padding:30px 0;
+      padding:20px 0 30px 0;
       line-height:20px;
     }
 
@@ -284,7 +282,7 @@ main{
 #event{
   text-align:center;
   background:#ccc;
-  padding-bottom:50px;
+  padding-bottom:100px;
   > .p01{font-size:$t_size_ss;}
 
   .swiper{
@@ -300,4 +298,181 @@ main{
     width:30px;
     border-radius:10px;
   }
+}
+
+// 6. 구매하기
+#buy{
+  text-align:center;
+
+  h3{
+    font-size:$t_size_t2;
+    padding:40px 0 20px 0;
+    font-weight:bold;
+  }
+
+  .t_color{color:$txt_color4;}
+
+  .buy_info_list{
+    display:grid;
+    width:1200px;
+    margin:$box_center;
+    grid-template-columns:repeat(3, 33.3333%);
+
+    > li{
+      padding-top:50px;
+
+      > h4{
+        font-size:18px;
+        font-weight:bold;
+      }
+
+      > img{
+        width:80px;
+        padding:15px 0;
+      }
+
+      > .p02{line-height:20px;}
+    }
+
+    > li:last-child{
+      // 마지막 li는 영상 콘텐츠라 병합을 해야 함.
+      grid-area:3/1/4/4; // 행/열/행/열번호
+
+      > iframe{width:80%; height:400px;}
+    }
+  }
+}
+
+// 7. 고객지원
+#customer{
+  background:$bg_color_light_g;
+
+  > article{
+    padding-bottom:30px;
+    width:1200px; height:300px;
+    margin:50px auto;
+    background:$txt_color2;
+
+    > h3{
+      font-size:18px;
+      text-align:center;
+      padding:60px 0 20px 0;
+      font-weight:bold;
+    }
+
+    .ars_left{border-right:1px solid $line_color_g;}
+
+    .ars_left, .ars_right{
+      width:50%;
+      padding:20px 30px;
+      box-sizing:border-box;
+      float:left;
+      display:flex;
+      justify-content:space-around;
+    
+      > p{
+        display:flex;
+        flex-direction:column;
+        line-height:30px;
+        text-align:center;
+        align-items:center;
+
+        > a{color:$nav_color02;}
+      }
+
+      > dl{line-height:24px;}
+      > dl > dt{font-weight:bold;}
+    }
+
+    strong{
+      font-weight:500px;
+      font-size:$t_size_m;
+    }
+
+    // 아이콘 배경서식
+    .car_icon, .member_icon{
+      background:url('../images/bg-support-ars.png');
+      display:inline-block;
+      height:46px;
+      text-indent:-9999px;
+      margin-top:30px;
+    }
+
+    // 아이콘 크기 각각 설정, 크기지정함.
+    .car_icon{width:75px;}
+    .member_icon{
+      width:60px;
+      background-position:-90px 0;
+      transform:translateY(-30px);
+    }
+  }
+
+  .cs_etc{
+    clear:both;
+    width:1200px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:60px;
+
+    > li{
+      height:200px;
+      background:$txt_color2;
+      padding:30px;
+      position:relative;
+      margin-bottom: 50px;
+
+      > h3{font-size:18px;}
+
+      > p{
+        &:first-of-type{
+          margin-top:30px;
+          font-weight:bold;
+        }
+
+        &:nth-of-type(2){
+          margin-top:10px;
+        }
+      }
+
+      a{
+        color:$nav_color02;
+        display:inline-block;
+        margin-top:10px;
+        
+        &:first-of-type{
+          margin-top:30px;
+        }
+      }
+
+      > div{
+        text-align: center;
+
+        > a{
+          &:last-child{
+            margin-left:30px;
+          }
+        }
+      }
+
+      > .btn01{
+        width:100px; height:20px;
+        line-height:20px;
+        text-align:center;
+        background:#042653;
+        color:$txt_color2;
+        padding:10px 20px;
+        position:absolute;
+        left:50%; bottom:20px;
+        transform:translate(-50%);
+      }
+    }
+  }
+}
+
+// 플로트 속성 해제
+.clearfix{
+  clear:both;
+  content:'';
+  display:block;
 }

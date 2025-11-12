@@ -8,6 +8,7 @@ $txt_color5:#052B58;
 
 $bg_color_g:#1C1A1D;
 $bg_color_y:#ff0;
+$bg_color_light_g:#ededed;
 
 $nav_color01:#00B3FF;
 $nav_color02:#006EFF;
@@ -28,6 +29,9 @@ $box_center:0 auto;
 
 // 애니메이션 시간
 $ani_time:0.3s;
+
+// 마진값 설정
+$m_value:80px;
 
 // 기본 글꼴
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
