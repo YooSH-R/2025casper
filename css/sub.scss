@@ -1,0 +1,61 @@
+
+// sub.scss
+
+// common 서식 가져오기
+@use "common" as *;
+
+// 서브페이지 헤더, 메인, 푸터 공통서식
+html, body{height:100%;}
+body{display: flex; flex-direction: column;}
+header{position:static;}
+main{background-color: $line_color_g; flex:1;}
+
+// 메인메뉴 서식
+header nav .gnb a{color:$txt_color1;}
+
+header .nav_icon span.fas{color:$txt_color1;}
+
+// 로그인 서식
+form{
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  > fieldset{
+    width:350px;
+    padding-top:35px;
+
+    > legend{
+      text-align:center;
+      font-size:$t_size_t1;
+      font-weight:bold;
+    }
+
+    > p{
+      margin-bottom:15px;
+      &:last-of-type{
+        text-align:center;
+        margin-top:20px;
+      }
+    }
+
+    input{
+      border:none;
+      height:28px;
+      padding:8px;
+      &[type="text"],&[type="password"]{width:350px;}
+      &[type="submit"]{
+        background-color: #3434dd;
+        color:$txt_color2;
+        width:366px;
+        cursor:pointer;
+        height:44px;
+      }
+    }
+
+    a{
+      padding:0 20px;
+      &:not(:last-of-type){border-right:1px solid #000;}
+    }
+  }
+}

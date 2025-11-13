@@ -52,7 +52,9 @@ main{
     > #next_btn{
       // 글자 숨기기 (text-indent:블럭요소에만 적용됨)
       display:inline-block;
-      text-indent:-9999px;
+      // text-indent:-9999px;
+      // font-size:0;
+      color:rgba(0,0,0,0);
       position:absolute;
       bottom:40px; left:50%;
       transform:translate(-50%, -50%);
@@ -226,7 +228,7 @@ main{
     bottom:100px;
     left:50%;
     transform:translateX(-50%);
-    z-index:1000;
+    z-index:999;
   }
 }
 
@@ -476,3 +478,6 @@ main{
   content:'';
   display:block;
 }
+
+// 배너
+#r_banner{text-align:center;}

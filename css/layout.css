@@ -46,7 +46,7 @@ header > .nav_icon {
   position: absolute;
   top: 24px;
 }
-header > .nav_icon > span.fas {
+header > .nav_icon span.fas {
   font-size: 16px;
   color: #fff;
   cursor: pointer;

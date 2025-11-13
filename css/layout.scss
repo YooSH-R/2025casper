@@ -17,7 +17,7 @@ header{
   > .nav_icon{
     width:40px;
     position:absolute; top:24px;
-    > span.fas{
+    span.fas{
       font-size:$t_size_m;
       color:$txt_color2;
       cursor:pointer;
@@ -85,7 +85,6 @@ header nav .gnb a:hover{text-decoration:underline;}
       text-align:center;
       font-weight:bold;
       transition:$ani_time;
-
     }
 
     a{
@@ -96,6 +95,7 @@ header nav .gnb a:hover{text-decoration:underline;}
       position:absolute; top:0;
     }
   }
+
   // 내비게이션에 마우스 오버시 li태그에 적용할 배경서식
   .m_nav_on{
     width:200px !important;
@@ -111,7 +111,7 @@ footer{
   > .f_inner{
     width:1200px;
     margin:$box_center;
-    display: flex;
+    display:flex;
     flex-wrap:wrap;
     align-content:flex-end;
   }

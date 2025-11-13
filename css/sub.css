@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  color: #333;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+.h_on {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.h_txt_color {
+  color: #333 !important;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: static;
+}
+
+main {
+  background-color: #ccc;
+  flex: 1;
+}
+
+header nav .gnb a {
+  color: #333;
+}
+
+header .nav_icon span.fas {
+  color: #333;
+}
+
+form {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form > fieldset {
+  width: 350px;
+  padding-top: 35px;
+}
+form > fieldset > legend {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+form > fieldset > p {
+  margin-bottom: 15px;
+}
+form > fieldset > p:last-of-type {
+  text-align: center;
+  margin-top: 20px;
+}
+form > fieldset input {
+  border: none;
+  height: 28px;
+  padding: 8px;
+}
+form > fieldset input[type=text], form > fieldset input[type=password] {
+  width: 350px;
+}
+form > fieldset input[type=submit] {
+  background-color: #3434dd;
+  color: #fff;
+  width: 366px;
+  cursor: pointer;
+  height: 44px;
+}
+form > fieldset a {
+  padding: 0 20px;
+}
+form > fieldset a:not(:last-of-type) {
+  border-right: 1px solid #000;
+}/*# sourceMappingURL=sub.css.map */

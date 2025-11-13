@@ -69,7 +69,7 @@ main > #movie > .m_info > a:first-of-type {
 }
 main > #movie > #next_btn {
   display: inline-block;
-  text-indent: -9999px;
+  color: rgba(0, 0, 0, 0);
   position: absolute;
   bottom: 40px;
   left: 50%;
@@ -226,7 +226,7 @@ main > #movie > #next_btn {
   bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 999;
 }
 
 #test_drive {
@@ -459,4 +459,8 @@ main > #movie > #next_btn {
   clear: both;
   content: "";
   display: block;
+}
+
+#r_banner {
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
